@@ -1,0 +1,262 @@
+*
+    box-sizing: border-box
+    
+
+
+@font-face 
+    font-family: 'Philosopher'
+    src: url('../fonts/Philosopher.ttf')
+    font-weight: regular
+    font-style: normal
+    // избежать отображения невидимого текста 
+    font-display: swap
+
+
+
+// переменные с цветами
+$white-color: white
+$black-color: black
+
+
+html
+    scroll-behavior: smooth
+    h1, h2
+        font-family: 'Philosopher'
+    p,  a
+        font-family: 'Open Sans', sans-serif
+
+// стилизуем теги-ссылки на странице   
+ul
+    list-style: none
+    li
+        a
+            color: $black-color
+            font-size: 18px !important
+            text-decoration: none !important
+            transition: 1s all !important
+            &:hover 
+                color: grey !important
+
+
+
+.container
+    margin: 0 auto
+    max-width: 1150px
+
+
+
+// ПЕРВАЯ СЕКЦИЯ
+.first-section
+    min-height: 100vh
+    position: relative
+    background-image: url(../images/blog/main-section-photo.jpg)
+    background-size: cover
+    background-position: center
+
+    overflow: hidden
+    padding-top: 15px
+
+
+    &__header 
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+    
+    // &__photo
+    //     width: 100%
+    //     height: 100%
+        
+    //     img
+    //         width: 100%
+    //         height: 100%
+
+    &__nav-bar
+        padding-right: 20px
+        padding-left: 20px
+        
+        
+
+// стилизуем nav-bar
+.nav-bar
+    width: 100%
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    ul
+        display: flex
+        flex-direction: row
+        align-items: center
+        li
+            margin-right: 42px
+            &:last-child
+                margin-right: 0px
+            a
+                color: $white-color  
+        img
+            width: 52px
+            color: $white-color
+
+.logo
+    width: 77px
+
+.header
+    color: $white-color
+    font-size: 100px
+
+
+
+// ВТОРАЯ СЕКЦИЯ
+
+// фоновое изображение для всях секций (вторая,третья,футер)
+.big-photo-container
+    position: relative
+    min-height: 100vh
+    background-image: url(../images/blog/second-section-bg_photo.jpg)
+    background-size: cover
+    background-position: center
+
+
+
+.second-section
+    overflow: hidden
+    padding-top: 118px
+    margin-bottom: 162px
+    // задаём щирину для внутреннего контейнера
+    &__content-container
+        max-width: 850px !important
+    h1, p
+        color: $black-color
+
+    // стилизуем маленький текст и отодвигаем от него основной текст
+    &__header-description
+        text-align: center
+        margin-bottom: 100px
+
+
+    // толкаем краткое описание от хедера
+    &__header
+        margin-bottom: 63px
+
+    // толкаем основной текст от краткого описания
+    
+
+    // основной текст 1
+    &__main-text-1
+        margin-bottom: 100px
+        // отодвигаем текст от заголовка
+        h2
+            margin-bottom: 42px
+            font-size: 38px
+            
+    &__main-text-2
+        h2
+            margin-bottom: 42px
+            font-size: 38px
+
+// стилизуем основной текст второй секции
+.text
+    p
+        font-size: 18px
+        // раздвигаем параграфы между собой
+        margin-bottom: 47px
+        &:last-child
+                margin-bottom: 0px
+
+// описание под хедером второй секции
+.little-description
+    font-size: 18px
+    font-weight: 300
+
+
+
+// третья секция
+.third-section
+    overflow: hidden
+    margin-bottom: 120px
+
+    &__content-container
+        max-width: 850px
+        display: flex
+        flex-wrap: wrap
+
+    &__about-photo
+        margin-right: 87px
+        img
+            width: 90px
+
+    // расположение элементов текста и кнопки
+    &__text-button
+        display: flex
+        flex-direction: column
+
+    // ширина контейнера для основного текста, в соответсвии с макетом
+    &__main-text
+        max-width: 522px
+
+    &__button
+        align-self: flex-end
+
+.button
+    display: flex
+    flex-direction: row
+    justify-content: space-evenly
+    align-items: center
+    
+    height: 53px
+    width: 259px
+    border: 3px solid #7A6960
+    border-radius: 30px
+    background-color: transparent
+    a
+        color: black
+        text-decoration: none 
+        transition: 1s all 
+        &:hover 
+            color: grey 
+
+
+.footer-section
+    overflow: hidden
+
+    // двигаем нав-меню от линии
+    &__line 
+        margin-bottom: 71px
+
+    // задаём расположение между лого и нав-меню
+    &__content-container
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+
+// стилизуем линию футера
+.line-1
+    width: 100%
+    height: 5px
+    border-bottom: 3px solid black
+    
+
+.footer-nav
+    width: 80%
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+
+    &__section
+        // padding-left: 95px
+        // &:last-child
+        //         margin-right: 0px
+
+    &__p-gap
+        li
+            margin-bottom: 15px
+            &:last-child
+                    margin-bottom: 0px
+
+
+
+@media (max-width: 767px)
+
+    // задаём размер заголовкам в зависимости от ширины экрана
+    h1
+        font-size: 10vw !important

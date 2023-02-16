@@ -1,0 +1,198 @@
+
+    
+@font-face 
+    font-family: 'Philosopher'
+    src: url('../fonts/Philosopher.ttf')
+    font-weight: regular
+    font-style: normal
+    // избежать отображения невидимого текста 
+    font-display: swap
+
+
+// переменные с цветами
+$white-color: white
+$black-color: black
+
+
+html
+    scroll-behavior: smooth
+    h1, h2
+        font-family: 'Philosopher'
+    p,  a
+        font-family: 'Open Sans', sans-serif
+    
+    
+    
+    // ПЕРВАЯ СЕКЦИЯ
+
+// применяем ко всем <a> одинаковую стилистику
+a
+    color: white !important
+    text-decoration: none 
+    transition: 1s all
+    &:hover 
+        color: blue
+
+
+
+.first-section
+
+    margin-bottom: 20px
+
+    // лого самолёта
+    &__logo
+        padding-left: 30px
+        width: 77px
+        
+
+.navbar
+    background-color: #495057 !important
+    
+
+// задаём расположение нав-бару справа в контейнере
+.navbar-collapse
+    justify-content: flex-end !important
+    padding-right: 30px
+    li
+        align-self: center
+
+// отступы между айтемами в nav-bar
+.navbar-collapse
+    li
+        margin-right: 42px
+        &:last-child
+            margin-right: 0px
+
+
+
+// слайдер
+.carousel-item
+    position: relative
+    width: 100%
+    height: 100%
+
+    // расположение заголовка посередине слайдера
+    h1
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+    // стилизация фото слайдера
+    img
+        object-fit:  cover    
+        height: 95vh
+        filter: brightness(0.5)
+    
+    &__wheather
+        position: absolute
+        bottom: 20%
+        right: 20%
+        
+
+
+// заголовок первой секции (ТУРЦИЯ)
+.header-turkey
+    z-index: 1
+    color: white
+    font-size: 140px
+    
+
+// контейнер с погодой
+.wheather
+    background-color: grey
+    max-width: 162px
+    min-height: 72px
+    z-index: 3
+
+    p
+        margin-bottom: 1px 
+        color: white
+
+    // стилизация лого погоды и температуры
+    &__temp
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: flex-end
+        img
+            padding-right: 18px
+
+
+
+// ВТОРАЯ СЕКЦИЯ
+
+.second-section
+    &__text
+        margin-bottom: 25px
+    
+
+// задаём отоброжение колонок по центру 
+.row
+    justify-content: center
+
+// двигаем третью колонку и убираем отображение рамок у карточек
+.card-1
+    margin-bottom: 15px
+    border: none
+    a
+        color: #212529 !important
+.card-2
+    margin-bottom: 15px
+    border: none
+.card-3
+    border: none
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// горизонтальная мобильная версия сайта
+@media (max-width: 768px)
+
+    // меняем размер шрифта h1 на слайдере
+    .header-turkey
+        font-size: 100px
+
+
+
+// вертикальная мобильная версия сайта
+@media (max-width: 575px)
+        
+    // ПЕРВАЯ СЕКЦИЯ
+    
+
+    // задаём расположение контента в слайдере
+    .carousel-item
+
+        // фото в 60% высоты экрна. Позволяет уменьшить всю секцию
+        img
+            height: 60vh
+
+
+    // рзмер шрифта header будет всегда 15% от общего экррана
+    .header-turkey
+        font-size: 15vw
+
+    // убираем отображение стрелок для смены слайда
+    .carousel-control-prev-icon
+        display: none
+    .carousel-control-next-icon
+        display: none
+
+    // ВТОРАЯ СЕКЦИЯ
+
+    
